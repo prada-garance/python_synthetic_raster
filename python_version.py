@@ -35,9 +35,9 @@ import numpy as np
 
 drive.mount('/content/drive')
 
-##lire donnée de ruben
+##read data
 from scipy import io
-# Charger le fichier mat
+# Load the mat file
 filepath ='/content/drive/MyDrive/codigo_python/chirp_319.mat'
 data = io.loadmat(filepath)
 raster = data['AD']
@@ -173,6 +173,7 @@ def find_core_cells_by_correlation(raster, ens_raster, nsur, p):
         sur_cel_cor: numpy array, shape (N, nens, nsur), the correlation between each cell and
                      artificially generated ensembles.
     """
+    
     np.set_printoptions(precision=8)
     global neuronid, idthr, ens_cel_corr, sur_cel_cor
     N, T = np.shape(raster)
